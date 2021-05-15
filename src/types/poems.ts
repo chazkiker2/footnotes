@@ -3,11 +3,16 @@ export type TextFormat = "bold" | "italics"
 export interface TextFragment {
   content: string
   specialFormatting: TextFormat[]
+  relatedFooter?: number
 }
 
 export interface TextLine {
   content: TextFragment[]
   indentation?: number
+}
+
+export interface Footer extends TextLine {
+  id: number
 }
 
 export interface Image {
@@ -20,9 +25,11 @@ export interface Image {
 export interface PoemFragment<Type> {
   title: string
   content: Type[]
+  footers?: Footer[]
 }
 
 export interface PoemParent<Type> extends PoemFragment<Type> {
+  id: number
   author: string
   image?: Image
   song?: string

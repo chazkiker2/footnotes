@@ -70,7 +70,7 @@ export interface ThemeColors extends StaticThemeColors {
 export interface Theme {
   id: ThemeName
   displayName: string
-  theme: CustomTheme | ThemeType
+  theme: ThemeType
   isDark: boolean
 }
 
