@@ -1,26 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Grommet } from 'grommet';
+import { dark } from "grommet/themes"
+// import { theme } from "./theme";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <Grommet theme={dark}>
+      <header>
+        <h1>Footnotes</h1>
       </header>
-    </div>
+    </Grommet>
   );
 }
-
-export default App;
