@@ -18,10 +18,7 @@ export default function Layout(props: LayoutProps) {
 
   return (
     <Box fill>
-      <Header
-        theme={theme}
-        toggleSidebar={toggleSidebar}
-      />
+      <Header theme={theme} toggleSidebar={toggleSidebar} />
       <Box flex direction="row">
         <Collapsible direction="horizontal" open={sidebar}>
           <Sidebar theme={theme} />
@@ -32,7 +29,6 @@ export default function Layout(props: LayoutProps) {
           </Main>
         </Box>
       </Box>
-
     </Box>
   )
 }

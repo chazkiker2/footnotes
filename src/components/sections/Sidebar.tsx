@@ -5,11 +5,9 @@ export interface SidebarProps extends BoxExtendedProps {
   theme: Theme
 }
 
-
 /* cSpell:disable */
 const linkedTOC = [
   ["footnotes", "#footnotes"],
-  // ["Table of Contents", "#table-of-contents"],
   ["Note", "#note-to-reader"],
   ["Forward", "#forward"],
   ["SMALL POIM", "#small-poim"],
@@ -37,15 +35,11 @@ const linkedTOC = [
 export default function SidebarComponent(props: SidebarProps) {
   const { theme, ...rest } = props;
   return (
-    <Box
-      fill
-      >
+    <Box fill>
       <Sidebar
-        // fill
         overflow="scroll"
         pad="small"
         width="small"
-
         elevation="small"
         background={theme.isDark ? "dark-1" : "light-1"}
         {...rest}

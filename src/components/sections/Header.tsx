@@ -1,4 +1,3 @@
-import React from "react"
 import ThemeSwitcher from "../common/ThemeSwitcher"
 import { Button, Header, Heading, Box, BoxTypes } from "grommet"
 import { List } from "grommet-icons"
