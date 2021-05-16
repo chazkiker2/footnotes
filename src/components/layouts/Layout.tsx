@@ -5,23 +5,49 @@ import { Grid, Main, Box, Button, Text, Sidebar } from "grommet"
 export interface LayoutProps {
   children: React.ReactNode
 }
+/* cSpell:disable */
+// const tableOfContents = [
+//   "Forward",
+//   "Dedication",
+//   "SMALL POIM",
+//   "RADIO POIM",
+//   "LAURENS POIM",
+//   "LOVE POIM",
+//   "PRAYER POIM",
+//   "MARY POIM",
+//   "MILWAUKEE POIM (VOL. I)",
+//   "RED GOLD POIM (VOL. II)",
+//   "NATES POIM",
+//   "SMALL POIMS",
+//   "EULOGY (RECYCLED IN IV PARTS)"
+// ]
 
-const TableOfContents = [
-  "Forward",
-  "Dedication",
-  "SMALL POIM",
-  "RADIO POIM",
-  "LAURENS POIM",
-  "LOVE POIM",
-  "PRAYER POIM",
-  "MARY POIM",
-  "MILWAUKEE POIM (VOL. I)",
-  "RED GOLD POIM (VOL. II)",
-  "NATES POIM",
-  "SMALL POIMS",
-  "EULOGY (RECYCLED IN IV PARTS)"
+const linkedTOC = [
+  // ["footnotes", "#footnotes"],
+  // ["Table of Contents", "#table-of-contents"],
+  ["Note", "#note-to-reader"],
+  ["Forward", "#forward"],
+  ["SMALL POIM", "#small-poim"],
+  ["RADIO POIM", "#radio-poim"],
+  ["LAURENS POIM", "#laurens-poim"],
+  ["LOVE POIM", "#love-poim"],
+  ["PRAYER POIM", "#prayer-poim"],
+  ["MARY POIM", "#mary-poim"],
+  ["MILWAUKEE POIM (VOL.I)", "#milwaukee-poim-vol-i"],
+  ["RED GOLD POIM (VOL.II)", "#red-gold-poim-vol-ii"],
+  ["NATES POIM", "#nates-poim"],
+  ["SMALL POIMS", "#small-poims"],
+  // ["I", "i"],
+  // ["II", "ii"],
+  // ["III", "iii"],
+  // ["IV", "iv"],
+  ["EULOGY (RECYCLED IN IV.PARTS)", "#eulogy-recycled-in-iv-parts"],
+  // ["I | RE: E", "#i--re-e"],
+  // ["II | RE: John Jr", "#ii--re-john-jr"],
+  // ["III | RE: B", "#iii--re-b"],
+  // ["IV | RE: Everyone I’ve ever loved", "#iv--re-everyone-ive-ever-loved"],
 ]
-
+/* cSpell:enable */
 export default function Layout(props: LayoutProps) {
   const [sidebar, setSidebar] = React.useState(true)
 
@@ -56,8 +82,8 @@ export default function Layout(props: LayoutProps) {
           ]}
         >
           <Button onClick={toggleSidebar}>Close Side Bar</Button>
-          {TableOfContents.map(name => (
-            <Button key={name} href={`#${name.toLowerCase().split(" ").join("-")}`} hoverIndicator>
+          {linkedTOC.map(([name, link]) => (
+            <Button key={name} href={link} hoverIndicator>
               <Box pad={{ horizontal: 'medium', vertical: 'small' }}>
                 <Text>{name}</Text>
               </Box>

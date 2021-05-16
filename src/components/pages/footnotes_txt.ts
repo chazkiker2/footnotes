@@ -1,3 +1,4 @@
+/* cSpell:disable */
 const content = `
 # footnotes
 
@@ -669,5 +670,5 @@ Let the dog back in, it’s cold. Try this. Too cheesy?
 <br>Or how many. Just happy I can do it all for you.
 
 `
-
+/* cSpell:enable */
 export default content;
