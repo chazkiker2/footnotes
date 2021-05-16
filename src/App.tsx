@@ -1,14 +1,15 @@
-import React from 'react';
 import { Grommet } from 'grommet';
-import { dark } from "grommet/themes"
-// import { theme } from "./theme";
+import { useTheme } from "./context/ThemeContext"
+import Home from "./components/pages/Home"
 
 export default function App() {
+  const { theme } = useTheme()
+
   return (
-    <Grommet theme={dark}>
-      <header>
-        <h1>Footnotes</h1>
-      </header>
-    </Grommet>
+    <>
+      <Grommet full theme={theme.theme}>
+        <Home />
+      </Grommet>
+    </>
   );
 }
