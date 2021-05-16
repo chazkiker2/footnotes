@@ -1,28 +1,13 @@
 import React from "react"
 import Header from "../sections/Header"
 import { useTheme } from "../../context/ThemeContext"
-import { Grid, Main, Box, Button, Text, Sidebar } from "grommet"
+import { Grid, Main, Box, Button, Text, Sidebar, BoxProps } from "grommet"
 
-export interface LayoutProps {
+export interface LayoutProps extends BoxProps {
   children: React.ReactNode
 }
-/* cSpell:disable */
-// const tableOfContents = [
-//   "Forward",
-//   "Dedication",
-//   "SMALL POIM",
-//   "RADIO POIM",
-//   "LAURENS POIM",
-//   "LOVE POIM",
-//   "PRAYER POIM",
-//   "MARY POIM",
-//   "MILWAUKEE POIM (VOL. I)",
-//   "RED GOLD POIM (VOL. II)",
-//   "NATES POIM",
-//   "SMALL POIMS",
-//   "EULOGY (RECYCLED IN IV PARTS)"
-// ]
 
+/* cSpell:disable */
 const linkedTOC = [
   // ["footnotes", "#footnotes"],
   // ["Table of Contents", "#table-of-contents"],
@@ -50,6 +35,8 @@ const linkedTOC = [
 ]
 /* cSpell:enable */
 export default function Layout(props: LayoutProps) {
+  const { children, ...rest } = props;
+
   const [sidebar, setSidebar] = React.useState(true)
   const { theme } = useTheme()
 
@@ -108,8 +95,8 @@ export default function Layout(props: LayoutProps) {
         >
           <Button onClick={toggleSidebar}>Open Sidebar</Button>
         </Box> */}
-      <Main gridArea="main">
-        {props.children}
+      <Main gridArea="main" {...rest}>
+        {children}
       </Main>
     </Grid>
   )

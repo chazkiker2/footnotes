@@ -9,7 +9,6 @@ const beginningSection = `
   - [Table of Contents](#table-of-contents)
   - [Note to Reader](#note-to-reader)
   - [Forward](#forward)
-  - [Dedication](#dedication)
   - [SMALL POIM](#small-poim)
   - [RADIO POIM](#radio-poim)
   - [LAURENS POIM](#laurens-poim)
