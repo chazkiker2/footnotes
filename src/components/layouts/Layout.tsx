@@ -1,6 +1,6 @@
 import React from "react"
 import Header from "../sections/Header"
-import { Grid, Main, Footer, Box, Button, Text, Sidebar, Nav } from "grommet"
+import { Grid, Main, Box, Button, Text, Sidebar } from "grommet"
 
 export interface LayoutProps {
   children: React.ReactNode
@@ -21,22 +21,6 @@ const TableOfContents = [
   "SMALL POIMS",
   "EULOGY (RECYCLED IN IV PARTS)"
 ]
-
-function SidebarButton(props: { label: string }) {
-  const { label } = props
-
-  return (
-    <Box pad="small">
-      <Button
-        gap="medium"
-        alignSelf="start"
-        plain
-        label={label}
-      />
-    </Box>
-  )
-}
-
 
 export default function Layout(props: LayoutProps) {
   const [sidebar, setSidebar] = React.useState(true)
@@ -62,7 +46,7 @@ export default function Layout(props: LayoutProps) {
         pad={{ horizontal: 'medium', vertical: 'small' }}
         background="dark-2" />
 
-      {sidebar &&
+      {sidebar ?
         <Sidebar gridArea="sidebar"
           background="dark-1"
           width="small"
@@ -71,15 +55,20 @@ export default function Layout(props: LayoutProps) {
             { type: 'slideRight', size: 'xlarge', duration: 150 },
           ]}
         >
+          <Button onClick={toggleSidebar}>Close Side Bar</Button>
           {TableOfContents.map(name => (
-            <Button key={name} href="#" hoverIndicator>
+            <Button key={name} href={`#${name.toLowerCase().split(" ").join("-")}`} hoverIndicator>
               <Box pad={{ horizontal: 'medium', vertical: 'small' }}>
                 <Text>{name}</Text>
               </Box>
             </Button>
           ))}
         </Sidebar>
-
+        :
+        <Box gridArea="sidebar"
+        >
+          <Button onClick={toggleSidebar}>Open Sidebar</Button>
+        </Box>
       }
       <Main gridArea="main">
         {props.children}
