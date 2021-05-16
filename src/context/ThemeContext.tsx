@@ -1,5 +1,4 @@
 import React from "react"
-import { dark, grommet } from "grommet/themes"
 import { Theme } from "../types"
 
 export interface ThemeProviderProps {
@@ -12,18 +11,16 @@ export interface ThemeProviderState {
 }
 
 const defaultLightTheme: Theme = {
-  id: "light",
   displayName: "Light",
-  theme: grommet,
+  themeMode: "light",
   isDark: false,
 }
 const defaultDarkTheme: Theme = {
-  id: "dark",
   displayName: "Dark",
-  theme: dark,
+  themeMode: "dark",
   isDark: true,
 }
-const defaultTheme = defaultDarkTheme
+const defaultTheme = defaultLightTheme
 
 export const ThemeContext = React.createContext<ThemeProviderState>({
   theme: defaultTheme,
@@ -45,7 +42,7 @@ export function ThemeProvider(props: ThemeProviderProps) {
         setTheme((t) => (t.isDark ? defaultLightTheme : defaultDarkTheme))
       },
     }),
-    [theme.id]
+    [theme.themeMode]
   )
 
   return (
