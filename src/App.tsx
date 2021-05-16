@@ -1,4 +1,5 @@
 import { Grommet } from 'grommet';
+import { grommet } from "grommet/themes"
 import { useTheme } from "./context/ThemeContext"
 import Home from "./components/pages/Home"
 
@@ -7,7 +8,7 @@ export default function App() {
 
   return (
     <>
-      <Grommet full theme={theme.theme}>
+      <Grommet full theme={grommet} themeMode={theme.isDark ? "dark" : "light"}>
         <Home />
       </Grommet>
     </>

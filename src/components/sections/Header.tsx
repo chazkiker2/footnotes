@@ -1,11 +1,17 @@
 import React from "react"
 import ThemeSwitcher from "../common/ThemeSwitcher"
-import { Header, Heading, Box, BoxTypes } from "grommet"
+import { Button, Header, Heading, Box, BoxTypes } from "grommet"
 
-export default function HeaderComponent(props: BoxTypes) {
+export interface HeaderProps extends BoxTypes {
+  toggleSidebar: () => void
+}
+
+export default function HeaderComponent({ toggleSidebar, ...rest }: HeaderProps) {
   return (
-    <Header background="dark-1" {...props}>
-      <Heading level="2" margin="none" responsive>footnotes<sup>1</sup></Heading>
+    <Header background="dark-1" {...rest}>
+      <Button href="#footnotes" onClick={toggleSidebar}>
+        <Heading level="2" margin="none" responsive>footnotes<sup>1</sup></Heading>
+      </Button>
       <Box>
         <ThemeSwitcher />
       </Box>

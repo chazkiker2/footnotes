@@ -1,5 +1,6 @@
 import React from "react"
 import Header from "../sections/Header"
+import { useTheme } from "../../context/ThemeContext"
 import { Grid, Main, Box, Button, Text, Sidebar } from "grommet"
 
 export interface LayoutProps {
@@ -50,31 +51,43 @@ const linkedTOC = [
 /* cSpell:enable */
 export default function Layout(props: LayoutProps) {
   const [sidebar, setSidebar] = React.useState(true)
+  const { theme } = useTheme()
 
   const toggleSidebar = () => setSidebar(prev => !prev)
+
+  const triggerIndex = () => {
+    if (!sidebar) setSidebar(true)
+  }
 
   return (
     <Grid
       fill
       rows={['auto', 'flex']}
       columns={['auto', 'flex']}
-      areas={[
-        { name: 'header', start: [0, 0], end: [1, 0] },
-        { name: 'sidebar', start: [0, 1], end: [0, 1] },
-        { name: 'main', start: [1, 1], end: [1, 1] },
-      ]}
+      areas={
+        sidebar ? [
+          { name: 'header', start: [0, 0], end: [1, 0] },
+          { name: 'sidebar', start: [0, 1], end: [0, 1] },
+          { name: 'main', start: [1, 1], end: [1, 1] },
+        ] : [
+          { name: 'header', start: [0, 0], end: [1, 0] },
+          // { name: 'sidebar', start: [0, 1], end: [0, 1] },
+          { name: 'main', start: [0, 1], end: [1, 1] },
+        ]
+      }
     >
 
       <Header gridArea="header"
+        toggleSidebar={triggerIndex}
         direction="row"
         align="center"
         justify="between"
         pad={{ horizontal: 'medium', vertical: 'small' }}
-        background="dark-2" />
+        background={theme.isDark ? "dark-2" : "light-2"} />
 
-      {sidebar ?
+      {sidebar &&
         <Sidebar gridArea="sidebar"
-          background="dark-1"
+          background={theme.isDark ? "dark-1" : "light-1"}
           width="small"
           animation={[
             { type: 'fadeIn', duration: 300 },
@@ -90,12 +103,11 @@ export default function Layout(props: LayoutProps) {
             </Button>
           ))}
         </Sidebar>
-        :
-        <Box gridArea="sidebar"
+      }
+      {/* <Box gridArea="sidebar"
         >
           <Button onClick={toggleSidebar}>Open Sidebar</Button>
-        </Box>
-      }
+        </Box> */}
       <Main gridArea="main">
         {props.children}
       </Main>
