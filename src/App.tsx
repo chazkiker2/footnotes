@@ -7,9 +7,6 @@ export default function App() {
 
   return (
     <>
-      {/* <style>
-        {`body { background-color: ${theme.isDark ? "#111111" : "#FFFFFF"} }`}
-      </style> */}
       <Grommet full theme={theme.theme}>
         <Home />
       </Grommet>

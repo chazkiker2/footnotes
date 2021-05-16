@@ -2,13 +2,7 @@ import { useTheme } from "../../context/ThemeContext"
 import { Button } from "grommet"
 import { Moon, Sun } from "grommet-icons"
 
-
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface ThemeSwitcherProps { }
-
-export default function ThemeSwitcher(props: ThemeSwitcherProps) {
-  // eslint-disable-next-line no-empty-pattern
-  const { } = props
+export default function ThemeSwitcher() {
 
   const { theme, toggleTheme } = useTheme()
 
