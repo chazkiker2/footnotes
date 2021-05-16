@@ -1,5 +1,6 @@
 /* cSpell:disable */
-const content = `
+
+const beginningSection = `
 # footnotes
 
 ## Table of Contents
@@ -53,6 +54,10 @@ Each song in [this playlist](https://open.spotify.com/playlist/0lBOYcqAQTBs0Mu4L
 
 ---
 
+`
+
+const smallPoim = `
+
 ## SMALL POIM
 
 Sometimes I make certain phrases
@@ -80,7 +85,6 @@ I felt weird after, but
 <br>Above some, but below most others.
 <br>I am but a man and myself.
 
-<!-- markdownlint-disable MD033 -->
 <figure>
   <img
     src="https://github.com/chazkiker2/footnotes/blob/main/src/static/image001.jpg?raw=true"
@@ -88,7 +92,14 @@ I felt weird after, but
   />
   <figcaption>"Curse of the Contemporary"</figcaption>
 </figure>
-<!-- markdownlint-enable MD033 -->
+
+`
+
+const content = `
+${beginningSection}
+
+${smallPoim}
+
 
 ## RADIO POIM
 

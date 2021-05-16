@@ -1,16 +1,14 @@
 import React from "react"
 import Layout from "../layouts/Layout"
-import { Main, Markdown } from "grommet"
+import { Main } from "grommet"
 
-import footnotesMarkdown from "./footnotes_txt"
+import FootnotesMD from "./FootnotesMD"
 
 export default function Home() {
   return (
     <Layout>
       <Main elevation="large" pad="large">
-        <Markdown>
-          {footnotesMarkdown}
-        </Markdown>
+        <FootnotesMD />
       </Main>
     </Layout>
   )
