@@ -37,7 +37,7 @@ export default function SidebarComponent(props: SidebarProps) {
   return (
     <Box fill>
       <Sidebar
-        overflow="scroll"
+        overflow="auto"
         pad="small"
         width="small"
         elevation="small"

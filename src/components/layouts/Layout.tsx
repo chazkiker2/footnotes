@@ -1,7 +1,7 @@
 import React from "react"
 import Header from "../sections/Header"
 import { useTheme } from "../../context/ThemeContext"
-import { Main, Box, Collapsible, BoxProps } from "grommet"
+import { Box, Collapsible, BoxProps } from "grommet"
 import Sidebar from "../sections/Sidebar"
 
 export interface LayoutProps extends BoxProps {
@@ -23,10 +23,8 @@ export default function Layout(props: LayoutProps) {
         <Collapsible direction="horizontal" open={sidebar}>
           <Sidebar theme={theme} />
         </Collapsible>
-        <Box flex align="center" justify="center">
-          <Main {...rest}>
-            {children}
-          </Main>
+        <Box fill flex align="center" justify="center" {...rest}>
+          {children}
         </Box>
       </Box>
     </Box>
