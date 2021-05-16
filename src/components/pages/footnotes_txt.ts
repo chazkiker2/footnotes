@@ -5,29 +5,28 @@ const beginningSection = `
 
 ## Table of Contents
 
-- [footnotes](#footnotes)
-  - [Table of Contents](#table-of-contents)
-  - [Note to Reader](#note-to-reader)
-  - [Forward](#forward)
-  - [SMALL POIM](#small-poim)
-  - [RADIO POIM](#radio-poim)
-  - [LAURENS POIM](#laurens-poim)
-  - [LOVE POIM](#love-poim)
-  - [PRAYER POIM](#prayer-poim)
-  - [MARY POIM](#mary-poim)
-  - [MILWAUKEE POIM (VOL. I)](#milwaukee-poim-vol-i)
-  - [RED GOLD POIM (VOL. II)](#red-gold-poim-vol-ii)
-  - [NATES POIM](#nates-poim)
-  - [SMALL POIMS](#small-poims)
-    - [I](#i)
-    - [II](#ii)
-    - [III](#iii)
-    - [IV](#iv)
-  - [EULOGY (RECYCLED IN IV. PARTS)](#eulogy-recycled-in-iv-parts)
-    - [I | RE: E](#i--re-e)
-    - [II | RE: John Jr](#ii--re-john-jr)
-    - [III | RE: B](#iii--re-b)
-    - [IV | RE: Everyone I’ve ever loved](#iv--re-everyone-ive-ever-loved)
+- [Table of Contents](#table-of-contents)
+- [Note to Reader](#note-to-reader)
+- [Forward](#forward)
+- [SMALL POIM](#small-poim)
+- [RADIO POIM](#radio-poim)
+- [LAURENS POIM](#laurens-poim)
+- [LOVE POIM](#love-poim)
+- [PRAYER POIM](#prayer-poim)
+- [MARY POIM](#mary-poim)
+- [MILWAUKEE POIM (VOL. I)](#milwaukee-poim-vol-i)
+- [RED GOLD POIM (VOL. II)](#red-gold-poim-vol-ii)
+- [NATES POIM](#nates-poim)
+- [SMALL POIMS](#small-poims)
+  - [I](#i)
+  - [II](#ii)
+  - [III](#iii)
+  - [IV](#iv)
+- [EULOGY (RECYCLED IN IV. PARTS)](#eulogy-recycled-in-iv-parts)
+  - [I | RE: E](#i--re-e)
+  - [II | RE: John Jr](#ii--re-john-jr)
+  - [III | RE: B](#iii--re-b)
+  - [IV | RE: Everyone I’ve ever loved](#iv--re-everyone-ive-ever-loved)
 
 ## Note to Reader
 
@@ -94,11 +93,7 @@ I felt weird after, but
 
 `
 
-const content = `
-${beginningSection}
-
-${smallPoim}
-
+const radioPoim = `
 
 ## RADIO POIM
 
@@ -120,9 +115,10 @@ As their empire fell in their hands,
 <br>They were left for the barbarians
 <br>Knocking at their door:
 
-*“We’re not savages,
+<i>“We’re not savages,
 <br>but we’re gutting you till there’s nothing left but your
-<br>hides.”*
+<br>hides.”
+</i>
 
 ---
 
@@ -143,6 +139,10 @@ As their empire fell in their hands,
   <figcaption>"I’m Confessin’ (That I Love You)"</figcaption>
 </figure>
 <!-- markdownlint-enable MD033 -->
+
+`
+
+const laurensPoim = `
 
 ## LAURENS POIM
 
@@ -170,7 +170,6 @@ By the time it was over
 <br>The constant loom ahead that not
 <br>one person was there in the first place.
 
-<!-- markdownlint-disable MD033 -->
 <figure class="image">
   <img
     src="https://github.com/chazkiker2/footnotes/blob/main/src/static/image003.jpg?raw=true"
@@ -178,7 +177,10 @@ By the time it was over
   />
   <figcaption>"Is this Wall Street Journal Online?"</figcaption>
 </figure>
-<!-- markdownlint-enable MD033 -->
+
+`
+
+const lovePoim = `
 
 ## LOVE POIM
 
@@ -224,7 +226,6 @@ Figured.<sup>3</sup>
 
 <sup>3</sup> Damn.
 
-<!-- markdownlint-disable MD033 -->
 <figure class="image">
   <img
     src="https://github.com/chazkiker2/footnotes/blob/main/src/static/image004.jpg?raw=true"
@@ -232,7 +233,10 @@ Figured.<sup>3</sup>
   />
   <figcaption>"Roots In Romanticism"</figcaption>
 </figure>
-<!-- markdownlint-enable MD033 -->
+
+`
+
+const prayerPoim = `
 
 ## PRAYER POIM
 
@@ -260,7 +264,6 @@ Regardless of past and present.
 <br>Of every atrocity ever.
 Yet, I wonder if I’ve ever learned anything?
 
-<!-- markdownlint-disable MD033 -->
 <figure class="image">
   <img
     src="https://github.com/chazkiker2/footnotes/blob/main/src/static/image005.jpg?raw=true"
@@ -268,7 +271,10 @@ Yet, I wonder if I’ve ever learned anything?
   />
   <figcaption>"Super Villain (Intro)"</figcaption>
 </figure>
-<!-- markdownlint-enable MD033 -->
+
+`
+
+const maryPoim = `
 
 ## MARY POIM
 
@@ -311,7 +317,6 @@ I am reserved at the table, waiting for you to take a seat,
 <br>Of reluctant self-satisfaction will attract some sort of pleasure
 <br>between the hills we touched lips at.
 
-<!-- markdownlint-disable MD033 -->
 <figure class="image">
   <img
     src="https://github.com/chazkiker2/footnotes/blob/main/src/static/image006.jpg?raw=true"
@@ -319,7 +324,10 @@ I am reserved at the table, waiting for you to take a seat,
   />
   <figcaption>"Same Old Lie"</figcaption>
 </figure>
-<!-- markdownlint-enable MD033 -->
+
+`
+
+const milwaukeePoim = `
 
 ## MILWAUKEE POIM (VOL. I)
 
@@ -359,7 +367,6 @@ By now, so many people have gone
 <br>They seemed to have just drifted by
 <br>Like time did and I realized I had bought a home for us.
 
-<!-- markdownlint-disable MD033 -->
 <figure class="image">
   <img
     src="https://github.com/chazkiker2/footnotes/blob/main/src/static/image007.jpg?raw=true"
@@ -367,7 +374,10 @@ By now, so many people have gone
   />
   <figcaption>"Tax Evasion Pride Flag"</figcaption>
 </figure>
-<!-- markdownlint-enable MD033 -->
+
+`
+
+const redGoldPoim = `
 
 ## RED GOLD POIM (VOL. II)
 
@@ -415,7 +425,6 @@ I can hear the checkout lady call your name to clean the
 <br>She was enthralled by how it all worked.
 <br>Everything makes more sense now.
 
-<!-- markdownlint-disable MD033 -->
 <figure class="image">
   <img
     src="https://github.com/chazkiker2/footnotes/blob/main/src/static/image008.jpg?raw=true"
@@ -423,7 +432,10 @@ I can hear the checkout lady call your name to clean the
   />
   <figcaption>"White Carpets Stain"</figcaption>
 </figure>
-<!-- markdownlint-enable MD033 -->
+
+`
+
+const natesPoim = `
 
 ## NATES POIM
 
@@ -451,7 +463,6 @@ The city skyline burns for you tonight,
 That floats beside my favorite building
 <br>Reflecting God’s light unto the world.
 
-<!-- markdownlint-disable MD033 -->
 <figure class="image">
   <img
     src="https://github.com/chazkiker2/footnotes/blob/main/src/static/image009.jpg?raw=true"
@@ -459,8 +470,10 @@ That floats beside my favorite building
   />
   <!-- <figcaption>"White Carpets Stain"</figcaption> -->
 </figure>
-<!-- markdownlint-enable MD033 -->
 
+`
+
+const smallPoims = `
 ## SMALL POIMS
 
 ### I
@@ -516,13 +529,16 @@ I will stand in your hallway and make
 My bare feet will stick to your shag carpet,
 <br>and
 <br>you will remember; you will hear me
-<br>haunt your house: *“I’m going to give you
+<br>haunt your house: <i>“I’m going to give you
 <br>good memories
-<br>and die on you,
+<br>and die on you,</i>
 
-Just for the sake of easing my death onto
-<br>others.”*
+<i>Just for the sake of easing my death onto
+<br>others.”</i>
 
+`
+
+const euologyPoims = `
 ## EULOGY (RECYCLED IN IV. PARTS)
 
 ### I | RE: E
@@ -678,6 +694,33 @@ Let the dog back in, it’s cold. Try this. Too cheesy?
 <br>*Set the table.* I’ll reply yes without hesitation
 <br>Knowing I can cook supper for two or four
 <br>Or how many. Just happy I can do it all for you.
+
+`
+
+const content = `
+${beginningSection}
+
+${smallPoim}
+
+${radioPoim}
+
+${laurensPoim}
+
+${lovePoim}
+
+${prayerPoim}
+
+${maryPoim}
+
+${milwaukeePoim}
+
+${redGoldPoim}
+
+${natesPoim}
+
+${smallPoims}
+
+${euologyPoims}
 
 `
 /* cSpell:enable */
