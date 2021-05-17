@@ -1,8 +1,13 @@
-import { Markdown } from "grommet";
+import { Markdown, MarkdownExtendedProps, Anchor, AnchorExtendedProps } from "grommet";
 import styled from "styled-components"
+import { Theme } from "../../types";
 import footnotesMarkdown from "./footnotes_txt";
 
-const CustomMarkdown = styled(Markdown)`
+export interface FootnotesMDProps extends MarkdownExtendedProps {
+  theme: Theme
+}
+
+const CustomMarkdown: React.FC<MarkdownExtendedProps> = styled(Markdown)`
   width: 100%;
 
   blockquote {
@@ -31,10 +36,29 @@ const CustomMarkdown = styled(Markdown)`
   }
 `
 
-export default function FootnotesMD() {
+
+const SAnchor: React.FC<AnchorExtendedProps> = styled(Anchor)`
+  text-decoration: underline;
+  font-weight: 630;
+  font-style: italic;
+`
+
+
+export default function FootnotesMD(props: FootnotesMDProps) {
+  const { theme, ...rest } = props;
   return (
-    <CustomMarkdown>
-      {footnotesMarkdown}
-    </CustomMarkdown>
+    <>
+      <CustomMarkdown
+        components={{
+          a: {
+            component: SAnchor,
+            props: { color: theme.isDark ? "light-1" : "dark-1", }
+          }
+        }}
+        {...rest}
+      >
+        {footnotesMarkdown}
+      </CustomMarkdown>
+    </>
   )
 }
